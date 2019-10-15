@@ -56,6 +56,8 @@ async function run() {
         if (useArtifacts) {
             var artifactsUri = collectionUri + "_packaging/" + artifactsFeeds + "/nuget/v3/index.json";
             artifactsUri = artifactsUri.replace("dev.azure.com", "pkgs.dev.azure.com");
+            // Add support for legacy Uri
+            artifactsUri = artifactsUri.replace("visualstudio.com", "pkgs.visualstudio.com");
             arg.push("--azure-artifacts-uri", artifactsUri);
         }
 
